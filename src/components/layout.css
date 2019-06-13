@@ -188,6 +188,15 @@ html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: rgb(66, 165, 245);
+  background: linear-gradient(
+    70deg,
+    rgba(66, 165, 245, 1) 0%,
+    rgba(179, 157, 219, 1) 84%
+  );
 }
 * {
   box-sizing: inherit;
