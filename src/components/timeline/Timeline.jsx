@@ -25,7 +25,7 @@ const TimelineWrapper = styled.div`
   }
 `
 
-const OFF_SCREEN_POS = `-${window.innerWidth / 3}px`
+const OFF_SCREEN_POS = "-700px"
 
 const slideIn = keyframes`
 

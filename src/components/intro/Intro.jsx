@@ -19,7 +19,7 @@ const TextWrapper = styled.div`
   display: flex;
   flex-flow: column;
   padding: 20px;
-  width: 50%;
+  width: 660px;
   margin-left: 6%;
 `
 
