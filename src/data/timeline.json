@@ -1,8 +1,32 @@
 [
-  { "message": "hello world" },
-  { "message": "whats up" },
-  { "message": "I'm alex" },
-  { "message": "hello world" },
-  { "message": "whats up" },
-  { "message": "I'm alex" }
+  {
+    "position": "Growth Engineer",
+    "org": "Pinterest",
+    "brief": "Worked on numerous improvements to the email and notifications dispatching tool.",
+    "feats": [
+      "Worked on numerous improvements to the email and notifications dispatching tool."
+    ]
+  },
+  {
+    "position": "Lead Software Engineer",
+    "org": "Point API",
+    "brief": "Served as the lead front end developer while the company went through YC and launched their intial MVPs.",
+    "feats": [
+      "Wrote and deployed several critical platform features –Point API uses artificial intelligence to suggest email replies to enhance messaging applications.",
+      "Designed and implemented the company’s homepage. (See pointapi.com)",
+      "Created an internal data annotation tool for rapidly labeling sections of email text.",
+      "Architected Point API’s JS and React packages. (On Github or docs.pointapi.com)",
+      "Converted REST backend to Websockets for highly interactive autocomplete sessions.",
+      "Wrote account management and payments page in React and Alibaba's Ant Design"
+    ]
+  },
+  {
+    "position": "Research Assistant",
+    "org": "Harvard SEAS",
+    "brief": "Helped out graduate students with various signal processing and ML projects.",
+    "feats": [
+      "Researched advanced machine learning applications.  Focused on how a DCGAN model maps geometric transformations and how simGANs improve generated wireless localization data.",
+      "Worked with PhD students to develop a wireless localization protocol for use with millimeter wave antennas. Learned machine learning/statistics concepts and data processing with Pandas."
+    ]
+  }
 ]

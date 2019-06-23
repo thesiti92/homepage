@@ -1,42 +1,17 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
-
-const TimelineItemWrapper = styled.div`
-  width: 300px;
-  background-color: white;
-  height: 100px;
-  border-style: solid;
-  grid-row: span 2;
-  align-content: middle;
-  :nth-child(odd) {
-    justify-self: flex-end;
-  }
-  ::before {
-    content: "";
-    position: absolute;
-    content: "";
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    left: calc(50% - 16px);
-    transform: translateY(calc(50% + 16px));
-
-    background-color: #4a148c;
-  }
-`
-
-function TimelineItem({ message }) {
-  return <TimelineItemWrapper>{message}</TimelineItemWrapper>
-}
+import TimelineItem from "./TimelineItem"
+import { GoInfo } from "react-icons/go"
+import { colors, styles } from "../consts"
 
 const TimelineWrapper = styled.div`
   display: grid;
   position: relative;
   grid-template-columns: 1fr;
   align-items: center;
-  margin: 0 48px;
+  width: 1200px;
+  margin: auto;
   ::before {
     content: "";
     background: #455a64;
@@ -45,8 +20,46 @@ const TimelineWrapper = styled.div`
     bottom: 0;
     position: absolute;
     left: 50%;
+    border-radius: 6px;
     transform: translateX(-50%);
   }
+`
+
+const OFF_SCREEN_POS = `-${window.innerWidth / 3}px`
+
+const slideIn = keyframes`
+
+  0% {
+    right: ${OFF_SCREEN_POS};
+  }
+  10% {
+    right: 0;
+  }
+  90% {
+    right: 0;
+  }
+  100% {
+    right: ${OFF_SCREEN_POS};
+  }
+`
+const HelperText = styled.h4`
+  position: absolute;
+  top: 6%;
+  right: ${OFF_SCREEN_POS};
+  color: #546e7a;
+  align-items: center;
+  display: flex;
+  font-size: 1.2rem;
+  background-color: ${colors.greyBackground};
+  padding: 6px;
+  border-radius: 6px;
+  animation: ${slideIn} 6s ease-out 10s;
+  animation-fill-mode: forwards;
+  box-shadow: ${styles.softBoxShadow};
+`
+
+const StyledGoInfo = styled(GoInfo)`
+  margin-right: 0.3rem;
 `
 
 function Timeline() {
@@ -58,7 +71,10 @@ function Timeline() {
         allTimelineJson {
           edges {
             node {
-              message
+              org
+              position
+              feats
+              brief
             }
           }
         }
@@ -67,6 +83,10 @@ function Timeline() {
   )
   return (
     <TimelineWrapper>
+      <HelperText>
+        <StyledGoInfo />
+        Click an item for more info!
+      </HelperText>
       {edges.map(({ node }) => (
         <TimelineItem {...node} />
       ))}
